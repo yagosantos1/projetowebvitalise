@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VitaSlim</title>
 
-<!-- CSS separado em pastas: src/styles -->
 <link rel="stylesheet" href="../src/styles/variables.css">
 <link rel="stylesheet" href="../src/styles/base.css">
 <link rel="stylesheet" href="../src/styles/main.css">
 </head>
 <body>
 
-<!-- ════════════════ NAVBAR (compartilhada) ════════════════ -->
 <nav id="navbar">
   <button class="logo" onclick="goTo('inicio')">
     <div class="logo-icon">🌿</div> VitaSlim
@@ -27,7 +25,6 @@
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a onclick="goTo('inicio'); closeMenu()">Início</a>
   <a onclick="goTo('produtos'); closeMenu()">Produtos</a>
@@ -36,10 +33,8 @@
   <a class="mob-btn" onclick="goTo('produtos'); closeMenu()">Compre agora →</a>
 </div>
 
-<!-- ════════════════ PÁGINA: INÍCIO ════════════════ -->
 <div class="page active" id="page-inicio">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-inner">
       <div class="hero-text" id="heroText">
@@ -57,7 +52,6 @@
     </div>
   </div>
 
-  <!-- COUNTERS -->
   <div class="counters">
     <div class="counters-inner">
       <div class="counter-item"><h2 class="count" data-target="12000">0</h2><p>Clientes Satisfeitos</p></div>
@@ -67,8 +61,7 @@
     </div>
   </div>
 
-  <!-- PRODUCTS (preview, clica e vai pra página Produtos) -->
-  <div class="section products">
+    <div class="section products">
     <div class="inner">
       <div class="section-label fade-in">NOSSOS PRODUTOS</div>
       <div class="section-title fade-in">Nossos Produtos:</div>
@@ -126,7 +119,6 @@
     </div>
   </div>
 
-  <!-- TESTIMONIALS -->
   <div class="section testimonials" id="depoimentos">
     <div class="inner">
       <div class="section-label fade-in">DEPOIMENTOS REAIS</div>
@@ -162,9 +154,8 @@
   </div>
 
 </div>
-<!-- FIM PÁGINA INÍCIO -->
 
-<!-- ════════════════ PÁGINA: PRODUTOS ════════════════ -->
+
 <div class="page" id="page-produtos">
 
   <div class="page-header">
@@ -230,9 +221,7 @@
   </div>
 
 </div>
-<!-- FIM PÁGINA PRODUTOS -->
 
-<!-- ════════════════ PÁGINA: DETALHE TURBO META (produto 04) ════════════════ -->
 <div class="page" id="page-turbo">
 
   <div class="detail-header">
@@ -281,9 +270,7 @@
   </div>
 
 </div>
-<!-- FIM PÁGINA DETALHE TURBO META -->
 
-<!-- ════════════════ FOOTER (compartilhado) ════════════════ -->
 <footer id="footer">
   <div class="footer-inner">
     <div class="footer-top">
@@ -321,10 +308,8 @@
   </div>
 </footer>
 
-<!-- TOAST -->
 <div class="toast" id="toast">🛒 Adicionado ao carrinho!</div>
 
-<!-- BACK TO TOP -->
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script src="../src/index.js"></script>
