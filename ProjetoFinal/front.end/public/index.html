@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VitaSlim</title>
+
+<link rel="stylesheet" href="../src/styles/variables.css">
+<link rel="stylesheet" href="../src/styles/base.css">
+<link rel="stylesheet" href="../src/styles/main.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <button class="logo" onclick="goTo('inicio')">
+    <div class="logo-icon">🌿</div> VitaSlim
+  </button>
+  <div class="nav-links">
+    <a id="nav-inicio" onclick="goTo('inicio')" class="active">Início</a>
+    <a id="nav-produtos" onclick="goTo('produtos')">Produtos</a>
+    <a onclick="goTo('inicio'); scrollToSection('depoimentos')">Depoimentos</a>
+    <a onclick="goTo('inicio'); scrollToSection('footer')">Contato</a>
+  </div>
+  <button class="nav-btn" onclick="goTo('produtos')">Compre agora</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="goTo('inicio'); closeMenu()">Início</a>
+  <a onclick="goTo('produtos'); closeMenu()">Produtos</a>
+  <a onclick="goTo('inicio'); closeMenu(); scrollToSection('depoimentos')">Depoimentos</a>
+  <a onclick="goTo('inicio'); closeMenu(); scrollToSection('footer')">Contato</a>
+  <a class="mob-btn" onclick="goTo('produtos'); closeMenu()">Compre agora →</a>
+</div>
+
+<div class="page active" id="page-inicio">
+
+   <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-text" id="heroText">
+        <div class="badge">100% NATURAL · REGISTRO ANVISA</div>
+        <h1>Transforme seu corpo com a natureza</h1>
+        <p>Cápsulas naturais de alta performance para auxiliar no emagrecimento saudável. Resultados comprovados por milhares de clientes.</p>
+        <button class="btn-cta" onclick="goTo('produtos')">Compre agora →</button>
+      </div>
+      <div class="hero-img" id="heroImg">
+        <img src="./images/kit.png" alt="Kit Completo" onclick="goTo('produtos')">
+        <img src="./images/slimcaps.png" alt="SlimCaps" onclick="goTo('produtos')">
+        <img src="./images/detox.png" alt="Detox Plus" onclick="goTo('produtos')">
+        <img src="./images/turbo.png" alt="Turbo Meta" onclick="goTo('produtos')">
+      </div>
+    </div>
+  </div>
+
+  <div class="counters">
+    <div class="counters-inner">
+      <div class="counter-item"><h2 class="count" data-target="12000">0</h2><p>Clientes Satisfeitos</p></div>
+      <div class="counter-item"><h2 class="count" data-target="98">0</h2><p>% de Aprovação</p></div>
+      <div class="counter-item"><h2 class="count" data-target="4">0</h2><p>Produtos Naturais</p></div>
+      <div class="counter-item"><h2 class="count" data-target="5">0</h2><p>Anos no Mercado</p></div>
+    </div>
+  </div>
+
+    <div class="section products">
+    <div class="inner">
+      <div class="section-label fade-in">NOSSOS PRODUTOS</div>
+      <div class="section-title fade-in">Nossos Produtos:</div>
+      <div class="section-sub fade-in">Encontre o suplemento ideal para seus objetivos!</div>
+      <div class="products-grid">
+
+        <div class="card" data-delay="0" onclick="goTo('produtos')">
+          <img src="./images/kit.png" alt="Kit Completo VitaSlim">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$349,90</span><span class="new-price">R$219,90</span></div>
+            <h3>Kit Completo VitaSlim</h3>
+            <div class="desc">Combo com 3 suplementos para resultado máximo no emagrecimento</div>
+            <button class="btn-buy" onclick="event.stopPropagation(); addToCart('Kit Completo VitaSlim')">R$ 219,90</button>
+          </div>
+        </div>
+
+        <div class="card" data-delay="100" onclick="goTo('produtos')">
+          <img src="./images/slimcaps.png" alt="SlimCaps Emagrecedor">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$119,90</span><span class="new-price">R$89,90</span></div>
+            <h3>SlimCaps Emagrecedor</h3>
+            <div class="desc">Cápsulas naturais para emagrecimento com quitosana e chá verde</div>
+            <button class="btn-buy" onclick="event.stopPropagation(); addToCart('SlimCaps Emagrecedor')">R$ 89,90</button>
+          </div>
+        </div>
+
+        <div class="card" data-delay="200" onclick="goTo('produtos')">
+          <img src="./images/detox.png" alt="Detox Plus Purificante">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$89,90</span><span class="new-price">R$69,90</span></div>
+            <h3>Detox Plus Purificante</h3>
+            <div class="desc">Detox natural com ervas para desintoxicar e desinchar o corpo</div>
+            <button class="btn-buy" onclick="event.stopPropagation(); addToCart('Detox Plus Purificante')">R$ 69,90</button>
+          </div>
+        </div>
+
+        <div class="card" data-delay="300" onclick="goTo('turbo')">
+          <img src="./images/turbo.png" alt="Turbo Meta Acelerador">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$139,90</span><span class="new-price">R$99,90</span></div>
+            <h3>Turbo Meta Acelerador</h3>
+            <div class="desc">Termogênico natural para acelerar metabolismo e queimar calorias</div>
+            <button class="btn-buy" onclick="event.stopPropagation(); addToCart('Turbo Meta Acelerador')">R$ 99,90</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="see-all-wrap">
+        <button class="see-all" onclick="goTo('produtos')">Ver todos os produtos →</button>
+      </div>
+    </div>
+  </div>
+
+    <div class="section testimonials" id="depoimentos">
+    <div class="inner">
+      <div class="section-label fade-in">DEPOIMENTOS REAIS</div>
+      <div class="section-title fade-in">QUEM USOU, APROVOU</div>
+      <div class="section-sub fade-in">Milhares de clientes satisfeitas com resultados reais e comprovados.</div>
+      <div class="reviews-grid">
+        <div class="review fade-in">
+          <div class="stars">★★★★★</div>
+          <q>Em 2 meses perdi 8kg! As cápsulas me deram mais disposição e controlaram minha fome. Super recomendo!</q>
+          <div class="reviewer">
+            <div><div class="reviewer-name">Carla M.</div><div class="reviewer-city">São Paulo, SP</div></div>
+            <div class="result-badge">-6kg em 45 dias</div>
+          </div>
+        </div>
+        <div class="review fade-in">
+          <div class="stars">★★★★★</div>
+          <q>Já tentei muitos suplementos, mas esse realmente funciona. Meu metabolismo acelerou e estou me sentindo ótima.</q>
+          <div class="reviewer">
+            <div><div class="reviewer-name">Fernanda S.</div><div class="reviewer-city">Rio de Janeiro, RJ</div></div>
+            <div class="result-badge">-8kg em 60 dias</div>
+          </div>
+        </div>
+        <div class="review fade-in">
+          <div class="stars">★★★★★</div>
+          <q>Produto de qualidade, entrega rápida e resultado real. A assinatura mensal me economiza bastante!</q>
+          <div class="reviewer">
+            <div><div class="reviewer-name">Juliana R.</div><div class="reviewer-city">Belo Horizonte, MG</div></div>
+            <div class="result-badge">-12kg em 90 dias</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="page" id="page-produtos">
+
+  <div class="page-header">
+    <div class="breadcrumb"><a onclick="goTo('inicio')">Início</a> &nbsp;/&nbsp; Produtos</div>
+  </div>
+
+  <div class="section products" style="padding-top:8px">
+    <div class="inner">
+      <div class="section-label fade-in">NOSSOS PRODUTOS</div>
+      <div class="section-title fade-in">Nossos Produtos:</div>
+      <div class="section-sub fade-in">Encontre o suplemento ideal para seus objetivos!</div>
+      <div class="products-grid full">
+
+        <div class="card" data-delay="0">
+          <img src="./images/kit.png" alt="Kit Completo VitaSlim">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$349,90</span><span class="new-price">R$219,90</span></div>
+            <h3>Kit Completo VitaSlim</h3>
+            <div class="desc">Combo com 3 suplementos para resultado máximo no emagrecimento</div>
+            <button class="btn-buy" onclick="addToCart('Kit Completo VitaSlim')">R$ 219,90</button>
+          </div>
+        </div>
+
+        <div class="card" data-delay="100">
+          <img src="./images/slimcaps.png" alt="SlimCaps Emagrecedor">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$119,90</span><span class="new-price">R$89,90</span></div>
+            <h3>SlimCaps Emagrecedor</h3>
+            <div class="desc">Cápsulas naturais para emagrecimento com quitosana e chá verde</div>
+            <button class="btn-buy" onclick="addToCart('SlimCaps Emagrecedor')">R$ 89,90</button>
+          </div>
+        </div>
+
+        <div class="card" data-delay="200">
+          <img src="./images/detox.png" alt="Detox Plus Purificante">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$89,90</span><span class="new-price">R$69,90</span></div>
+            <h3>Detox Plus Purificante</h3>
+            <div class="desc">Detox natural com ervas para desintoxicar e desinchar o corpo</div>
+            <button class="btn-buy" onclick="addToCart('Detox Plus Purificante')">R$ 69,90</button>
+          </div>
+        </div>
+
+        <div class="card" data-delay="300" onclick="goTo('turbo')">
+          <img src="./images/turbo.png" alt="Turbo Meta Acelerador">
+          <div class="card-body">
+            <div class="stars">★★★★★</div>
+            <div class="prices"><span class="old-price">R$139,90</span><span class="new-price">R$99,90</span></div>
+            <h3>Turbo Meta Acelerador</h3>
+            <div class="desc">Termogênico natural para acelerar metabolismo e queimar calorias</div>
+            <button class="btn-buy" onclick="event.stopPropagation(); addToCart('Turbo Meta Acelerador')">R$ 99,90</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="see-all-wrap">
+        <button class="see-all" onclick="goTo('inicio')">← Voltar para o Início</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="page" id="page-turbo">
+
+  <div class="detail-header">
+    <button class="back-btn" onclick="goTo('produtos')">↩</button>
+    <h1>Turbo Meta Acelerador</h1>
+  </div>
+
+  <div class="detail-wrap">
+    <div class="detail-img">
+      <img src="./images/turbo.png" alt="Turbo Meta Acelerador">
+    </div>
+    <div class="detail-info">
+      <div class="detail-prices">
+        <span class="old-price">R$139,90</span>
+        <span class="new-price">R$ 99,90</span>
+      </div>
+      <h2>Detalhes do produto:</h2>
+      <div class="badges-row">
+        <span>🛡️ Registro ANVISA</span>
+        <span>🚚 Frete Grátis acima R$150</span>
+        <span>🔄 Garantia 30 dias</span>
+      </div>
+      <div class="reg-anvisa">Registro ANVISA: 6.04359-4</div>
+      <div class="detail-rating">
+        <span class="stars">★★★★★</span>
+        <span class="count">(412 avaliações)</span>
+        <button class="btn-buy-detail" onclick="addToCart('Turbo Meta Acelerador')">Compre Agora!</button>
+      </div>
+
+      <div class="detail-block">
+        <p>Potente acelerador metabólico com termogênicos naturais. Aumenta o gasto calórico diário e proporciona mais energia e disposição durante todo o dia.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Para quem é indicado</h4>
+        <p>Pessoas ativas que buscam potencializar a queima calórica e ter mais energia.</p>
+      </div>
+      <div class="detail-block">
+        <h4>Princípios Ativos</h4>
+        <p>Cafeína Natural 200mg, Pimenta Caiena 150mg, Guaraná 200mg, L-Carnitina 300mg</p>
+      </div>
+      <div class="detail-block">
+        <h4>Resultados Esperados</h4>
+        <p>Aumento de energia perceptível nos primeiros dias. Aceleração do metabolismo em 2 semanas.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><div class="logo-icon">🌿</div> VitaSlim</div>
+        <p class="footer-tagline">Suplementos naturais de alta qualidade para auxiliar no seu processo de emagrecimento saudável.</p>
+        <div class="footer-badges">
+          <div class="foot-badge">🛡 ANVISA</div>
+          <div class="foot-badge">🏅 Qualidade</div>
+          <div class="foot-badge">📦 Rastreável</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a onclick="goTo('produtos')">Produtos</a>
+        <a onclick="goTo('inicio')">Como Funciona</a>
+        <a onclick="goTo('inicio')">FAQ</a>
+        <a onclick="goTo('inicio')">Meus Pedidos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Informações</h4>
+        <a>Política de Privacidade</a>
+        <a>Termos de Uso</a>
+        <a>Política de Troca</a>
+        <a>Frete e Entrega</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="contact-item">📞 (47) 99999-0000</div>
+        <div class="contact-item">✉️ contato@vitaslim.com.br</div>
+        <div class="contact-item">📍 Joinville, SC</div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 VitaSlim. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">🛒 Adicionado ao carrinho!</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../src/index.js"></script>
+</body>
+</html>
