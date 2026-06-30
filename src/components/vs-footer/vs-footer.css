@@ -1,0 +1,113 @@
+:host { display: block; }
+
+footer {
+  background: var(--dark-bg, #0A0C0B);
+  color: var(--dark-text, #F4F6F4);
+  padding: 40px 0 22px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Top: logo + intro */
+.top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 26px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--green, #1AB36C), var(--green-dark, #0E7C49));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo svg { width: 22px; height: 22px; color: #fff; }
+
+.intro h2 {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.intro p {
+  color: var(--dark-muted, #97A39D);
+  max-width: 560px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  gap: 32px;
+  padding: 16px 0;
+  border-top: 1px solid var(--dark-divider, #1E2420);
+  border-bottom: 1px solid var(--dark-divider, #1E2420);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge svg { width: 18px; height: 18px; color: var(--green, #1AB36C); }
+
+/* Links grid */
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  padding: 28px 0;
+}
+
+.col h3 {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.col a,
+.col .contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark-muted, #97A39D);
+  font-size: 14px;
+  padding: 7px 0;
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.col a:hover { color: var(--green, #1AB36C); }
+
+.col svg { width: 17px; height: 17px; color: var(--green, #1AB36C); flex-shrink: 0; }
+
+/* Bottom bar */
+.bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--dark-divider, #1E2420);
+  text-align: center;
+  color: var(--dark-muted, #97A39D);
+  font-size: 13px;
+}
+
+@media (max-width: 599px) {
+  footer { padding: 28px 0 16px; }
+  .container { padding: 0 16px; }
+  .top { flex-direction: column; }
+  .badges { flex-direction: column; gap: 12px; }
+  .content { grid-template-columns: 1fr; gap: 20px; }
+}

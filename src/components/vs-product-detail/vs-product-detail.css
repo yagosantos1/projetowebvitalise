@@ -1,0 +1,169 @@
+:host { display: block; }
+
+main { padding: 28px 0 48px; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Botão voltar */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink, #16181A);
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color .15s;
+}
+
+.back:hover { color: var(--green, #1AB36C); }
+.back svg { width: 20px; height: 20px; }
+
+/* Layout 2 colunas */
+.produto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.imagem {
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f4f2ec, #e6e2d8);
+}
+
+.imagem img { width: 100%; display: block; }
+
+/* Info */
+h1 {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--ink, #16181A);
+  margin-bottom: 12px;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.price-old {
+  font-size: 14px;
+  color: var(--ink-muted, #6B7280);
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.price-new {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--green-dark, #0E7C49);
+}
+
+/* Estrelas */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.stars { display: flex; gap: 2px; color: #F5B400; }
+.stars svg { width: 17px; height: 17px; }
+.count { font-size: 13.5px; color: var(--ink-muted, #6B7280); }
+
+/* Descrição — conteúdo slotado */
+.description { margin-bottom: 4px; }
+
+::slotted(p) {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink, #16181A);
+  margin-bottom: 14px;
+}
+
+::slotted(p) strong {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+}
+
+/* Badges de info */
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 0;
+  border-top: 1px solid var(--divider, #ececec);
+  border-bottom: 1px solid var(--divider, #ececec);
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-muted, #6B7280);
+  font-weight: 500;
+}
+
+.badge svg { width: 18px; height: 18px; color: var(--green, #1AB36C); flex-shrink: 0; }
+
+/* Estoque */
+.stock-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--ink-muted, #6B7280);
+  margin-bottom: 16px;
+}
+.stock-row.low { color: #b45309; }
+.stock-row.low strong { color: #92400e; }
+.dot { width: 8px; height: 8px; border-radius: 100%; background: var(--green, #1AB36C); flex-shrink: 0; display: inline-block; }
+.dot.low { background: #f59e0b; }
+
+/* Botão comprar */
+.btn {
+  width: 100%;
+  padding: 12px 0;
+  background: var(--green, #1AB36C);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(26, 179, 108, .6);
+  transition: background .15s, transform .15s;
+}
+
+.btn:hover {
+  background: var(--green-dark, #0E7C49);
+  transform: translateY(-1px);
+}
+
+/* Responsivo */
+@media (max-width: 1023px) {
+  .produto { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 599px) {
+  main { padding: 18px 0 36px; }
+  .container { padding: 0 16px; }
+  h1 { font-size: 22px; }
+  .price-new { font-size: 22px; }
+}

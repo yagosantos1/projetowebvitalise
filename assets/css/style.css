@@ -1,0 +1,43 @@
+/*
+ * Estilos globais — apenas variáveis, reset e fonte.
+ * Todo o CSS de layout fica dentro de cada Web Component (Shadow DOM).
+ * As custom properties definidas aqui cascateiam para dentro do Shadow DOM.
+ */
+
+/* ===== Variáveis (tokens) ===== */
+:root {
+  --green:      #1AB36C;
+  --green-dark: #0E7C49;
+  --amber:      #F5B400;
+
+  --bg:         #F7F9F8;
+  --surface:    #FFFFFF;
+  --ink:        #16181A;
+  --ink-muted:  #6B7280;
+  --divider:    #ECECEC;
+
+  --dark-bg:      #0A0C0B;
+  --dark-text:    #F4F6F4;
+  --dark-muted:   #97A39D;
+  --dark-divider: #1E2420;
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  min-height: 100vh;
+}

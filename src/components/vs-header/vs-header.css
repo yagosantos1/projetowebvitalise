@@ -1,0 +1,109 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header {
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--divider, #ececec);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--green, #1AB36C), var(--green-dark, #0E7C49));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo svg { width: 20px; height: 20px; color: #fff; }
+
+.nome {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink, #16181A);
+}
+
+nav { display: flex; gap: 26px; }
+
+nav a {
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink-muted, #6B7280);
+  transition: color .15s;
+}
+
+nav a:hover { color: var(--green, #1AB36C); }
+
+.cart-btn {
+  position: relative;
+  background: var(--bg, #F7F9F8);
+  border: 1px solid var(--divider, #ececec);
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink, #16181A);
+  transition: background .13s, border-color .13s;
+  flex-shrink: 0;
+}
+
+.cart-btn svg { width: 18px; height: 18px; }
+
+.cart-btn:hover { background: #e8f5ee; border-color: var(--green, #1AB36C); color: var(--green, #1AB36C); }
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--green, #1AB36C);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+@media (max-width: 599px) {
+  .container { height: 52px; padding: 0 16px; }
+  .nome { font-size: 16px; }
+  nav { gap: 14px; }
+  nav a { font-size: 13px; }
+}

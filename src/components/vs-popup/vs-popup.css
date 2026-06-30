@@ -1,0 +1,187 @@
+:host { display: block; }
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 1300;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+.overlay.open { display: flex; }
+
+.popup {
+  background: #fff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 36px 32px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,.22);
+  animation: pop-in .3s cubic-bezier(.34,1.56,.64,1);
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--bg, #F7F9F8);
+  border: none;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink-muted, #6B7280);
+  transition: background .12s;
+}
+.close-btn:hover { background: #ececec; }
+
+.popup-tag {
+  display: inline-block;
+  background: #dcfce7;
+  color: var(--green-dark, #0E7C49);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.popup-badge {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--green, #1AB36C);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -2px;
+}
+.popup-badge span {
+  font-size: 36px;
+  vertical-align: top;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+h2 {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink, #16181A);
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 14.5px;
+  color: var(--ink-muted, #6B7280);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+p strong { color: var(--ink, #16181A); }
+
+/* Form */
+#popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+#popup-form input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--divider, #ececec);
+  border-radius: 12px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 14px;
+  color: var(--ink, #16181A);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color .15s;
+}
+#popup-form input:focus { border-color: var(--green, #1AB36C); }
+
+#popup-form button[type="submit"] {
+  width: 100%;
+  background: var(--green, #1AB36C);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, transform .12s;
+  box-shadow: 0 6px 20px rgba(26,179,108,.35);
+}
+#popup-form button[type="submit"]:hover { background: var(--green-dark, #0E7C49); transform: translateY(-1px); }
+
+.btn-skip {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--ink-muted, #6B7280);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+.btn-skip:hover { color: var(--ink, #16181A); }
+
+/* Success state */
+.success { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+.success-icon { color: var(--green, #1AB36C); }
+
+.success-msg { font-size: 14px; color: var(--ink-muted, #6B7280); margin: 0; }
+
+.coupon-box {
+  background: var(--bg, #F7F9F8);
+  border: 1.5px dashed var(--green, #1AB36C);
+  border-radius: 14px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.coupon-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-muted, #6B7280); }
+.coupon-code { font-family: var(--font-display, 'Poppins', sans-serif); font-size: 28px; font-weight: 700; color: var(--green, #1AB36C); letter-spacing: 2px; }
+.coupon-hint { font-size: 12px; color: var(--ink-muted, #6B7280); }
+
+.btn-shop {
+  background: var(--green, #1AB36C);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 13px 32px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s;
+  width: 100%;
+}
+.btn-shop:hover { background: var(--green-dark, #0E7C49); }
+
+@media (max-width: 480px) {
+  .popup { padding: 32px 22px 24px; }
+  .popup-badge { font-size: 52px; }
+}
